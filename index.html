@@ -10,23 +10,26 @@
       --primary-bg: #ffffff;
       --accent-dark: #0d1b2a;   /* Navy */
       --accent-gold: #d4af37;   /* Gold */
-      --btn-bg: #0d1b2a;        /* Default button navy */
-      --btn-text: #fff;
+      --btn-bg: #0d1b2a;        /* Default navy */
       --btn-hover: #d4af37;     /* Hover gold */
+      --btn-text: #fff;
     }
+
     body {
       margin: 0;
       font-family: "Tahoma", Arial, sans-serif;
       background: var(--primary-bg);
       color: var(--accent-dark);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 20px;
-      overflow-x: hidden;
       min-height: 100vh;
+      padding: 20px;
       position: relative;
+      overflow: hidden;
+      text-align: center;
     }
+
     /* Animated background */
     .background {
       position: absolute;
@@ -56,10 +59,12 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-30px); }
     }
-    header {
-      margin: 20px 0;
-      text-align: center;
+
+    .container {
+      max-width: 420px;
+      width: 100%;
     }
+
     header img {
       width: 140px;
       margin-bottom: 10px;
@@ -70,16 +75,15 @@
       font-size: 2rem;
     }
     header p {
-      margin: 5px 0 0;
+      margin: 5px 0 20px;
       color: #555;
     }
+
     .buttons {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      max-width: 400px;
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
     .btn {
       display: flex;
@@ -93,50 +97,20 @@
       background-color: var(--btn-bg);
       text-decoration: none;
       border-radius: 12px;
-      transition: transform 0.2s, background-color 0.3s, color 0.3s;
-      position: relative;
-      overflow: hidden;
-      animation: pulse 3s infinite;
+      transition: transform 0.2s, background-color 0.3s;
     }
     .btn i {
       font-size: 1.4rem;
     }
     .btn:hover {
       background-color: var(--btn-hover);
-      color: var(--accent-dark); /* Text turns navy */
       transform: scale(1.05);
     }
 
-    /* Pulse animation */
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-    }
-
-    /* Shine effect */
-    .btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75px;
-      width: 50px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5);
-      transform: skewX(-20deg);
-      animation: shine 6s infinite;
-    }
-    @keyframes shine {
-      0% { left: -75px; }
-      40% { left: 120%; }
-      100% { left: 120%; }
-    }
-
     footer {
-      margin-top: auto;
+      margin-top: 30px;
       font-size: 0.9rem;
       color: #777;
-      padding: 20px 0;
-      text-align: center;
     }
   </style>
 </head>
@@ -147,26 +121,28 @@
     <div class="circle"></div>
   </div>
 
-  <header>
-    <img src="https://www.nesbaaplication.com/assets/images/logo/logo.png" alt="NESBA Logo">
-    <h1>NESBA APP</h1>
-    <p>Your Educational Platform</p>
-  </header>
+  <div class="container">
+    <header>
+      <img src="https://www.nesbaaplication.com/assets/images/logo/logo.png" alt="NESBA Logo">
+      <h1>NESBA APP</h1>
+      <p>Your Educational Platform</p>
+    </header>
 
-  <div class="buttons">
-    <a class="btn" href="https://nesbaaplication.com/" target="_blank">
-      <i class="fa-solid fa-globe"></i> Visit Website
-    </a>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.nahr.nessba" target="_blank">
-      <i class="fa-brands fa-google-play"></i> Download on Google Play
-    </a>
-    <a class="btn" href="https://apps.apple.com/us/app/nessba/id6749504445" target="_blank">
-      <i class="fa-brands fa-apple"></i> Download on App Store
-    </a>
+    <div class="buttons">
+      <a class="btn" href="https://nesbaaplication.com/" target="_blank">
+        <i class="fa-solid fa-globe"></i> Visit Website
+      </a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.nahr.nessba" target="_blank">
+        <i class="fa-brands fa-google-play"></i> Google Play
+      </a>
+      <a class="btn" href="https://apps.apple.com/us/app/nessba/id6749504445" target="_blank">
+        <i class="fa-brands fa-apple"></i> App Store
+      </a>
+    </div>
+
+    <footer>
+      © 2025 Nahr Development
+    </footer>
   </div>
-
-  <footer>
-    © 2025 Nahr Development
-  </footer>
 </body>
 </html>
