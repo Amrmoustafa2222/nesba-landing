@@ -10,8 +10,9 @@
       --primary-bg: #ffffff;
       --accent-dark: #0d1b2a;   /* Navy */
       --accent-gold: #d4af37;   /* Gold */
-      --btn-bg: #d4af37;
+      --btn-bg: #0d1b2a;        /* Default button navy */
       --btn-text: #fff;
+      --btn-hover: #d4af37;     /* Hover gold */
     }
     body {
       margin: 0;
@@ -92,15 +93,44 @@
       background-color: var(--btn-bg);
       text-decoration: none;
       border-radius: 12px;
-      transition: transform 0.2s, background-color 0.3s;
+      transition: transform 0.2s, background-color 0.3s, color 0.3s;
+      position: relative;
+      overflow: hidden;
+      animation: pulse 3s infinite;
     }
     .btn i {
       font-size: 1.4rem;
     }
     .btn:hover {
-      background-color: #b8932e;
+      background-color: var(--btn-hover);
+      color: var(--accent-dark); /* Text turns navy */
       transform: scale(1.05);
     }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* Shine effect */
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75px;
+      width: 50px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: skewX(-20deg);
+      animation: shine 6s infinite;
+    }
+    @keyframes shine {
+      0% { left: -75px; }
+      40% { left: 120%; }
+      100% { left: 120%; }
+    }
+
     footer {
       margin-top: auto;
       font-size: 0.9rem;
