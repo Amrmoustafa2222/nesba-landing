@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NESBA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-bg: #ffffff;
+      --accent-dark: #0d1b2a;   /* Navy */
+      --accent-gold: #d4af37;   /* Gold */
+      --btn-bg: #d4af37;
+      --btn-text: #fff;
+    }
+    body {
+      margin: 0;
+      font-family: "Tahoma", Arial, sans-serif;
+      background: var(--primary-bg);
+      color: var(--accent-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+    /* Animated background */
+    .background {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      animation: float 10s infinite ease-in-out;
+    }
+    .circle:nth-child(1) {
+      width: 200px; height: 200px; top: 10%; left: -50px;
+    }
+    .circle:nth-child(2) {
+      width: 150px; height: 150px; bottom: 20%; right: -60px;
+      animation-duration: 12s;
+    }
+    .circle:nth-child(3) {
+      width: 300px; height: 300px; top: 50%; left: 40%;
+      animation-duration: 15s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    header {
+      margin: 20px 0;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 2rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--btn-text);
+      background-color: var(--btn-bg);
+      text-decoration: none;
+      border-radius: 12px;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .btn i {
+      font-size: 1.4rem;
+    }
+    .btn:hover {
+      background-color: #b8932e;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <header>
+    <img src="https://www.nesbaaplication.com/assets/images/logo/logo.png" alt="NESBA Logo">
+    <h1>NESBA APP</h1>
+    <p>Your Educational Platform</p>
+  </header>
+
+  <div class="buttons">
+    <a class="btn" href="https://nesbaaplication.com/" target="_blank">
+      <i class="fa-solid fa-globe"></i> Visit Website
+    </a>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.nahr.nessba" target="_blank">
+      <i class="fa-brands fa-google-play"></i> Download on Google Play
+    </a>
+    <a class="btn" href="https://apps.apple.com/us/app/nessba/id6749504445" target="_blank">
+      <i class="fa-brands fa-apple"></i> Download on App Store
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Nahr Development
+  </footer>
+</body>
+</html>
